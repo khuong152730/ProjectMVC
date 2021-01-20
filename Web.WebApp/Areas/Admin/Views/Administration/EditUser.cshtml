@@ -1,0 +1,62 @@
+﻿@model EditUserViewModel
+
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<h1>Edit User</h1>
+
+<form method="post" class="mt-3">
+    <div class="container-fluid">
+        <h3>Edit User</h3>
+
+        <table class="table table-dark edit-user" style="width:100%;margin: 0 auto;">
+            <thead class="thead-light text-center">
+                <tr>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <input asp-for="Email" type="text">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>UserName</th>
+                    <td>
+                        <input asp-for="UserName" type="text">
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>Lock</th>
+                    <td>
+                        <select asp-for="Lock" class="form-control">
+                            <option value="true">Lock</option>
+                            <option value="false">Unlock</option>
+                        </select>
+                        <span asp-validation-for="Lock" class="text-danger"></span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-outline-warning">Cập nhật</button>
+                        <a asp-action="ListUsers" class="btn btn-outline-warning">Quay lại</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</form>
+<style>
+    table tr td input {
+        outline: none;
+        width: 100%;
+        padding:1rem 1rem;
+    }
+</style>

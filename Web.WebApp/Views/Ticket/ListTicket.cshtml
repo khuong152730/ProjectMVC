@@ -1,0 +1,4 @@
+﻿@foreach(var events in ViewBag.ListTicket)
+{
+    <a   asp-action="Details" asp-route-id="@events.id" >@events.name</a>
+}

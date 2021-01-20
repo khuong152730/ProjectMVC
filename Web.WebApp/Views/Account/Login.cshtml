@@ -1,0 +1,53 @@
+﻿@model Web.Data.Model.LoginViewModel
+
+    <div class="simple-login-container">
+        <h2>Login</h2>
+        <form method="post" asp-controller="account" asp-action="login">
+            @Html.ValidationMessage("invalid_account", new { @class = "text-danger mb-10" })
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="Email" placeholder="Email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group"b>
+                    <input type="password" placeholder="Password" name="Password" class="form-control">
+                    <span asp-validation-for="Lock" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <input type="submit" class="btn btn-block btn-login" placeholder="Đăng nhập">
+                </div>
+            </div>
+            <a class="nav-link text-test text-center" asp-area="" asp-controller="Account" asp-action="Register">Tạo tài khoản mới</a>
+        </form>
+    </div>
+    <style>
+        body {
+         
+            font-size: 14px;
+        }
+        .text-test{
+            color:black!important;
+        }
+        .text-test:hover {
+            color: cornflowerblue !important;
+        }
+        .simple-login-container {
+            width: 300px;
+            max-width: 100%;
+            margin: 50px auto;
+        }
+
+            .simple-login-container h2 {
+                text-align: center;
+                font-size: 20px;
+                color:darkturquoise;
+            }
+
+            .simple-login-container .btn-login {
+                background-color: #FF5964;
+
+            }
+    </style>

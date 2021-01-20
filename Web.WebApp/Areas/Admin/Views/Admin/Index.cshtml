@@ -1,0 +1,89 @@
+﻿@model IEnumerable<Web.Application.MEvent.EventResponse>
+
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead class="text-center">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.sukien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nhatochuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eventprogram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diadiem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.congty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nguoiphutrach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngaybatdau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngayketthuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nguoitoida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nguoitoithieu)
+            </th>
+        </tr>
+    </thead>
+    <tbody class="text-center">
+        @foreach (var item in Model)
+        {
+<tr>
+
+    <td>
+        @item.sukien
+    </td>
+    <td>
+        @item.nhatochuc
+    </td>
+    <td>
+        @item.eventprogram
+    </td>
+    <td>
+        @item.diadiem
+    </td>
+    <td>
+        @item.congty
+    </td>
+    <td>
+        @item.nguoiphutrach
+    </td>
+    <td>
+        @item.ngaybatdau.ToString().Replace("12:00:00 AM", " ")
+    </td>
+    <td>
+        @item.ngayketthuc.ToString().Replace("12:00:00 AM", " ")
+    </td>
+    <td>
+        @item.nguoitoida
+    </td>
+    <td>
+        @item.nguoitoithieu
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+    </td>
+</tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,118 @@
+﻿@model Web.Data.Model.UserViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DetailsUser</title>
+</head>
+<body>
+    <div class="container details-user">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h3>Cập nhật thông tin</h3>
+        <form asp-action="Update">
+            <table>
+                <tr>
+                    <td class="title">Last Name</td>
+                    <td class="content">
+                        <input type="text" asp-for="@Model.LastName" value="@Model.LastName">
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">First Name</td>
+                    <td class="content">
+                        <input type="text" asp-for="@Model.FirstName" value="@Model.FirstName">
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="title">Date of Birth</td>
+                    <td class="content">
+                        <input type="date" asp-for="@Model.DateOfBirth">
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">Giới tính</td>
+                    <td class="content">
+                        <select asp-for="@Model.Gender">
+                            <option value="True">Nam</option>
+                            <option value="False">Nữ</option>
+
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">Địa chỉ</td>
+                    <td class="content">
+                        <input type="text" asp-for="@Model.Address" value="@Model.Address">
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">Email</td>
+                    <td class="content">
+                        <input type="text" asp-for="@Model.Email" value="@Model.Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">Số điện thoại</td>
+                    <td class="content">
+                        <input type="text" asp-for="@Model.PhoneNumber" value="@Model.PhoneNumber">
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <input type="submit" value="Cập nhật" class="text-white btn btn-danger" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+<style>
+    .details-user h3 {
+        font-weight: 400;
+        color: cornflowerblue;
+        border-bottom: 1px solid black;
+        padding: 0.5rem 0;
+    }
+
+    .details-user table {
+        font-size: 1.3rem;
+        width: 40%;
+        /* background: firebrick; */
+        margin: 0 auto;
+    }
+
+        .details-user table tr .title {
+            text-transform: uppercase;
+            color: rgb(0, 86, 112);
+            font-weight: 600;
+        }
+
+        .details-user table tr .content {
+            font-weight: 500;
+        }
+
+        .details-user table tr td {
+            padding: 1rem 0 !important;
+        }
+
+            .details-user table tr td input {
+                outline: none;
+                border: none;
+                border-bottom: 1px dotted black;
+            }
+
+    * {
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+    }
+</style>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Web.Application.MTicket.TicketReponse>
+
+@{ ViewData["Title"] = "Index"; }
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hetmoban)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.toida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.giuphan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chuaxacnhan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Event.sukien)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @item.name
+            </td>
+
+            <td>
+                @item.hetmoban
+            </td>
+            <td>
+                @item.gia
+            </td>
+            <td>
+                @item.toida
+            </td>
+            <td>
+                @item.giuphan
+            </td>
+            <td>
+                @item.chuaxacnhan
+            </td>
+            <td>
+                @item.Event.sukien
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

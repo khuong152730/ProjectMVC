@@ -1,0 +1,108 @@
+﻿@model Web.Application.MEvent.EventResponse
+@{ ViewData["Title"] = "Chi tiết"; }
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Chi tiết</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.sukien)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.sukien)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.website)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.website)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.nhatochuc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.nhatochuc)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.eventprogram)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.eventprogram)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.diadiem)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.diadiem)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.congty)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.congty)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.nguoiphutrach)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.nguoiphutrach)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ngaybatdau)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ngaybatdau)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.ngayketthuc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ngayketthuc)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.muigio)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.muigio)
+                    </dd>
+
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.chuyenmuc)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.chuyenmuc)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.twitterhashtag)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.twitterhashtag)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.nguoitoida)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.nguoitoida)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.nguoitoithieu)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.nguoitoithieu)
+                    </dd>
+                
+                </dl>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a>
+</div>

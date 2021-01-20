@@ -1,0 +1,74 @@
+﻿@model Web.Application.MTicket.TicketRequest
+<form asp-action="Update" method="post">
+    <div class="container details-user">
+        <h3>Cập nhật</h3>
+        <table>
+            <tr>
+                <td class="title">Tên</td>
+                <td class="content"><input asp-for="name" type="text"></td>
+            </tr>
+            <tr>
+                <td class="title">Hết mở bán</td>
+                <td class="content"><input asp-for="hetmoban" type="date"></td>
+            </tr>
+            <tr>
+                <td class="title">Giá</td>
+                <td class="content"><input asp-for="gia" type="number"></td>
+            </tr>
+            <tr>
+                <td class="title">Số Chỗ tối đa</td>
+                <td class="content"><input asp-for="toida" type="number"></td>
+            </tr>
+            <tr>
+                <td class="title">Số chỗ đã giữ phần</td>
+                <td class="content"><input asp-for="giuphan" type="number"></td>
+            </tr>
+            <tr>
+                <td class="title">Sự kiện</td>
+                <td class="content"><select asp-for="EventId" class="form-control" asp-items="ViewBag.EventId"></select></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center"> <input type="submit" class="text-white btn btn-danger" value="Cập nhật"></td>
+            </tr>
+        </table>
+    </div>
+</form>
+<style>
+    .details-user h3 {
+        font-weight: 400;
+        color: cornflowerblue;
+        border-bottom: 1px solid black;
+        padding: 0.5rem 0;
+    }
+
+    .details-user table {
+        font-size: 1.3rem;
+        width: 40%;
+        /* background: firebrick; */
+        margin: 0 auto;
+    }
+
+        .details-user table tr .title {
+            text-transform: uppercase;
+            color: rgb(0, 86, 112);
+            font-weight: 600;
+        }
+
+        .details-user table tr .content {
+            font-weight: 500;
+        }
+
+        .details-user table tr td {
+            padding: 1rem 0 !important;
+        }
+
+            .details-user table tr td input {
+                outline: none;
+                border: none;
+                border-bottom: 1px dotted black;
+            }
+
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
+</style>

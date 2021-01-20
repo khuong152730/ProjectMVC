@@ -1,0 +1,97 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@{
+    var user = await UserManager.GetUserAsync(User);
+   
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link rel="stylesheet" href="~/Client/client.css">
+    <title>Sự Kiện</title>
+</head>
+
+<body>
+        <div class="container-fluid">
+            <div class="container-fluid" style="border: 1px black;">
+                <div class="container header">
+                    <div class="logo">
+                        <a asp-action="Index" asp-controller="Home"><img src="~/Client/logo.png" alt=""></a>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Blog</a></li>
+                            <li><a href="">Contact</a></li>
+                            <li><a href="/admin">Admin</a></li>
+                            <li><a href="/account/login">Account</a></li>
+                        </ul>
+                    </div>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <div class="user btn">
+                            <div class="details">
+                                <span>
+                                        @(user.FullName ?? user.UserName)
+                                </span><i class="fas fa-user"></i>
+
+                            </div>
+                            <div class="user-extend">
+                                <ul>
+                                    <li><a asp-controller="account" asp-action="DetailsUser" asp-route-id="@user.Id"><i class="fas fa-cogs"></i><span>Setting</span></a></li>
+                                    <li><a href="/account/logout"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    }
+                    else { 
+                        <div class="user btn">
+                            <div class="details">
+
+                                <span>
+                                    User
+                                </span>
+                                <i class="fas fa-user"></i>
+
+                            </div>
+                            <div class="user-extend">
+                                <ul>
+                                    <li><a href="/account/login"><i class="fas fa-cogs"></i><span>Login</span></a></li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                                        }
+                </div>
+
+            </div>
+
+
+            @RenderBody();
+
+        </div>
+        
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $(".user-extend").toggle();
+    });
+    $(".user").click(function () {
+        $(".user-extend").toggle();
+    });
+
+</script>

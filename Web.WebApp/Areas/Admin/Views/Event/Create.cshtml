@@ -1,0 +1,150 @@
+﻿@model Web.Data.Entities.Event
+    <div class="wrapper">
+        <form method="post" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="event_panel">
+                <div class="er_pn-title"><a href="">Sự kiện</a>/Mới</div>
+                <div class="er_action-cr">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-plus"></i>
+                        Xác nhận sự kiện
+                    </button>
+                    <a asp-controller="Event" asp-action="Index" asp-area="Admin" class="btn btn-outline-dark">
+                        <i class="fas fa-plus"></i>
+                        Hủy bỏ sự kiện
+                    </a>
+                </div>
+            </div>
+            <div class="event_create">
+                <div class="form_create">
+                    <div class="cr_head">
+                        <div class="cr_title">
+                            <span>Sự kiện</span>
+                            <input asp-for="sukien" class="cl-pur" type="text" placeholder="Tên Sự Kiện">
+                            <span asp-validation-for="sukien" class="text-danger"></span>
+                        </div>
+                        <div class="cr_web">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="cr_body">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="label"><label for="">Website</label></td>
+                                    <td>
+                                        <input asp-for="website" type="text">
+                                        <span asp-validation-for="website" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Nhà tổ chức</label></td>
+                                    <td>
+                                        <input asp-for="nhatochuc" type="text">
+                                        <span asp-validation-for="nhatochuc" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Event Program</label></td>
+                                    <td>
+                                        <input asp-for="eventprogram" type="text">
+                                        <span asp-validation-for="eventprogram" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Địa điểm</label></td>
+                                    <td>
+                                        <input asp-for="diadiem" type="text">
+                                        <span asp-validation-for="diadiem" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Công Ty</label></td>
+                                    <td>
+                                        <input asp-for="congty" type="text">
+                                        <span asp-validation-for="congty" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Người Phụ Trách</label></td>
+                                    <td>
+                                        <input asp-for="nguoiphutrach" type="text">
+                                        <span asp-validation-for="nguoiphutrach" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="label"><label for="">Chuyên mục</label></td>
+                                    <td>
+                                        <input asp-for="chuyenmuc" type="text">
+                                        <span asp-validation-for="chuyenmuc" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Twitter Hashtag</label></td>
+                                    <td>
+                                        #<input asp-for="twitterhashtag" type="text">
+                                        <span asp-validation-for="twitterhashtag" class="text-danger"></span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="label"><label for="">Ngày bắt đầu</label></td>
+                                    <td>
+                                        <input asp-for="ngaybatdau" class="cl-pur" type="date" id="nbd">
+                                        <span asp-validation-for="ngaybatdau" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Ngày kết thúc</label></td>
+                                    <td>
+                                        <input asp-for="ngayketthuc" class="cl-pur" type="date" id="nkt">
+                                        <span asp-validation-for="ngayketthuc" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Múi giờ</label></td>
+                                    <td>
+                                        <input asp-for="muigio" class="cl-pur" type="text">
+                                        <span asp-validation-for="muigio" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="label"><label for="">Số người tham gia <br> tối thiểu</label></td>
+                                    <td>
+                                        <input asp-for="nguoitoithieu" type="text">
+                                        <span asp-validation-for="nguoitoithieu" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label"><label for="">Số người tham gia <br> tối đa</label></td>
+                                    <td>
+                                        <input asp-for="nguoitoida" type="text">
+                                        <span asp-validation-for="nguoitoida" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+   
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}}

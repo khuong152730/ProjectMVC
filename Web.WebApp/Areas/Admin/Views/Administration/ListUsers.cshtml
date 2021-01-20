@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AppUser>
+
+@{
+    ViewBag.Title = "All Users";
+}
+
+<h1>All Users</h1>
+
+@if (Model.Any())
+{<a asp-action="Register" asp-controller="Account"
+    class="btn btn-primary mb-3" style="width:auto">
+        Add new user
+    </a>
+
+
+    <div class="container-fluid">
+        <table class="table table-dark">
+            <thead class="thead-light">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Ngày sinh</th>
+                    <th>Email</th>
+                    <th>Số điện thoại</th>
+                    <th>Địa chỉ</th>
+                    <th>Trạng thái</th>
+
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                <tr>
+                    <td>
+                        @user.FullName
+                    </td>
+                    <td>
+                        @user.DateOfBirth.ToString().Replace(" 12:00:00 AM +07:00", " ")
+                    </td>
+                    <td>
+                        @user.Email
+                    </td>
+                    <td>
+                        @user.PhoneNumber
+                    </td>
+                    <td>
+                        @user.Address
+                    </td>
+                    <td>
+                        @{
+                            if (@user.Lock == true)
+                            {
+                                <span>Khóa</span>
+                            }
+                            else
+                            {
+                                <span></span>
+                            }
+                                }
+
+                    </td>
+                    <td>
+                        <a asp-action="EditUser" asp-controller="Administration"
+                           asp-route-id="@user.Id"
+                           class="btn btn-warning">Edit</a>
+                        <a href="" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+}
+

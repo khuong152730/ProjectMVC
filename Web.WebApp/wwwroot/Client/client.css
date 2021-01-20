@@ -1,0 +1,237 @@
+* {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.logo {
+    width: 50px;
+}
+
+    .logo img {
+        width: 100%;
+    }
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.menu {
+    margin-left: 10rem;
+}
+
+    .menu ul {
+        display: flex;
+        margin: 0;
+    }
+
+        .menu ul li {
+            margin: 0 1rem;
+            list-style: none;
+        }
+
+            .menu ul li a {
+                text-decoration: none;
+                font-size: 1.2rem;
+                font-weight: 400;
+                color: black;
+            }
+
+            .menu ul li:hover a {
+                color: rgb(13, 125, 145);
+            }
+
+.banner {
+    width: 100%;
+}
+
+    .banner img {
+        width: 100%;
+        z-index: 1;
+    }
+
+.user-extend {
+    width: 220px;
+    height: auto;
+    top: 10%;
+    position: absolute;
+    z-index: 99;
+    background: white;
+    border: 1px gray solid;
+    border-radius: 10px;
+}
+
+.user {
+    width: 220px;
+    text-align: right;
+    color: gray;
+}
+.user .details {
+        text-align: center;
+}
+    .user .user-extend {
+        text-align: center;
+        padding-top: 0.6rem;
+    }
+
+    .user span {
+        text-align: center;
+    }
+
+.user-extend a {
+    text-decoration: none;
+    color: black;
+}
+.user-extend i {
+    color: rgb(131, 131, 131);
+}
+.user-extend ul {
+    padding-left: 0;
+}
+.user-extend span {
+    margin-left: 0.5rem;
+}
+    .user-extend ul li {
+        list-style: none;
+    }
+        .user-extend ul li:hover {
+            background: rgba(143, 143, 143, 0.205);
+        }
+
+/* --css client-- */
+.event {
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    flex-wrap: nowrap;
+}
+
+.event_content {
+    width: 280px;
+    height: 250px;
+    /* background: gold; */
+    margin-bottom: 3rem;
+    margin-right: 0.3rem;
+}
+
+.event_left {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event_tab {
+    display: flex;
+    width: 240px!important;
+    flex-direction: column;
+}
+.event_tab button {
+    width: 240px !important;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.event_title a {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.ticket {
+    background: rgb(255, 254, 254);
+}
+
+    .ticket h2 {
+        background: white;
+        padding: 1rem 0;
+        border-bottom: 3px solid rgb(255, 0, 0);
+    }
+
+.detail_event {
+    display: flex;
+    /* padding-left: 15%; */
+}
+
+    .detail_event .event-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .detail_event .event-left {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+.event-left .text_title {
+    margin: 1rem 0;
+    color: rgb(0, 116, 106);
+    border-bottom: 1px solid rgb(0, 190, 117);
+}
+
+.event-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-content {
+    margin-left: 30%;
+    text-align: center;
+}
+
+    .event-content .text_title {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+        color: rgb(0, 81, 119);
+    }
+
+        .event-content .text_title:hover {
+            color: Red;
+        }
+
+.list_ticket {
+    display: flex;
+    flex-direction: column;
+}
+
+    .list_ticket .ticket_list {
+        text-align: center;
+        display: flex;
+    }
+
+        .list_ticket .ticket_list .ticket_title {
+            /* margin-right: 12rem; */
+            width: 19%;
+            background: rgb(0, 116, 124);
+            font-weight: 600;
+            color: white;
+        }
+
+    .list_ticket .ticket_content .ticket_title-f {
+        /* margin-right: 12rem; */
+        width: 19%;
+        background: rgb(204, 204, 204);
+    }
+
+    .list_ticket .ticket_content {
+        padding: 0.5rem 0;
+        text-align: center;
+        display: flex;
+    }
+.hid {
+    display: none!important;
+}
+.tieptheo1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.daqua1 {
+    display: flex;
+    flex-wrap: wrap;
+}

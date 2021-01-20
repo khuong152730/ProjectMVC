@@ -1,0 +1,62 @@
+﻿@model Web.Application.MEvent.EventResponse
+    <div class="container-fluid ticket">
+        <h2 class="text-center">Chi tiết sự kiện</h2>
+        <div class="container detail_event">
+            <div class="event-left">
+                <span class="text_title">Sự kiện</span>
+                <span class="text_title">Nhà tổ chức</span>
+                <span class="text_title">Chương trình</span>
+                <span class="text_title">Địa điểm</span>
+                <span class="text_title">Công ty</span>
+                <span class="text_title">Người phụ trách</span>
+                <span class="text_title">Thời gian</span>
+                <span class="text_title">Số người tham gia</span>
+            </div>
+            <div class="event-content">
+                <span class="text_title">@Model.sukien</span>
+                <span class="text_title">@Model.nhatochuc</span>
+                <span class="text_title">@Model.chuyenmuc</span>
+                <span class="text_title">@Model.diadiem</span>
+                <span class="text_title">@Model.congty</span>
+                <span class="text_title">@Model.nguoiphutrach</span>
+                <span class="text_title">@Model.ngaybatdau Đến @Model.ngayketthuc</span>
+                <span class="text_title">@Model.nguoitoida Người</span>
+            </div>
+        </div>
+        <div class="container list_ticket">
+
+
+            @{
+                if (@Model.ngayketthuc <= DateTime.Now)
+                {
+                    <span>Sự kiện đã kết thúc rồi 3:</span>
+                }
+                else
+                {
+                    <div class="ticket_list">
+                        <span class="ticket_title">Tên vé</span>
+                        <span class="ticket_title">Thời hạn bán</span>
+                        <span class="ticket_title">Giá</span>
+                        <span class="ticket_title">Sự kiện</span>
+                        <span class="ticket_title">Action</span>
+
+                    </div>
+                    @foreach (var ticket in ViewBag.Listticket)
+                    {
+                        <div class="ticket_content">
+                            <span class="ticket_title-f">@ticket.name</span>
+                            <span class="ticket_title-f">@ticket.hetmoban</span>
+                            <span class="ticket_title-f">@ticket.gia</span>
+                            <span class="ticket_title-f">@Model.sukien</span>
+                            <span class="ticket_title-f">
+                                <a asp-route-ticketId="@ticket.id" asp-action="DatVe" asp-controller="Home" class=" btn btn-outline-danger">Đặt vé</a>
+                            </span>
+
+                        </div>
+                    }
+                }
+            }
+
+
+        </div>
+    </div>

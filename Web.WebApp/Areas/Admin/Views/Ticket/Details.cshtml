@@ -1,0 +1,64 @@
+﻿@model Web.Application.MTicket.TicketReponse
+@{ ViewData["Title"] = "Chi tiết"; }
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <h4 class="card-title">Chi tiết</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.name)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.name)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.hetmoban)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.hetmoban)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.gia)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.gia)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.toida)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.toida)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.giuphan)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.giuphan)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.chuaxacnhan)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.chuaxacnhan)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Event.sukien)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Event.sukien)
+                    </dd>
+                </dl>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a>
+</div>

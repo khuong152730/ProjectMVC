@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Web.Data.Entities.AppRole>
+
+<div class="container-fluid">
+    <h3>List Role</h3>
+    <a asp-action="CreateRole"
+       asp-controller="administration" class="btn btn-primary">ADD ROLE</a>
+    <table class="table table-dark" style="width:100%">
+        <thead class="thead-light text-center">
+            <tr>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            @foreach (var role in Model)
+            {
+            <tr>
+                <td>@role.Name</td>
+                <td>
+                    <a asp-action="EditRole" asp-route-Id="@role.Id" class="btn btn-outline-warning">Edit</a>
+                    <form asp-action="DeleteRole" asp-route-id="@role.Id" method="post" class="">
+                        <button type="submit" class="btn btn-outline-warning">Deletee</button>
+                        @*<span id="confirmDeleteSpan_@role.Id" style="display:none">
+                            <span>Are you sure you want to delete?</span>
+                            <button type="submit" class="btn btn-danger">Yes</button>
+                            <a href="#" class="btn btn-outline-warning"
+                               onclick="confirmDelete('@role.Id', false)">No</a>
+                        </span>
+
+                        <span id="deleteSpan_@role.Id">
+                            <a href="#" class="btn btn-danger"
+                               onclick="confirmDelete('@role.Id', true)">Delete</a>
+                        </span>*@
+                    </form>
+
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script src="~/js/script.js"></script>
+<style>
+    table tr td input {
+        outline: none;
+        width: 100%;
+        padding: 1rem 1rem;
+    }
+</style>

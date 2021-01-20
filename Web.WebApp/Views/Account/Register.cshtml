@@ -1,0 +1,114 @@
+﻿@model Web.Data.Model.RegisterViewModel
+
+@{
+    ViewBag.Title = "User Registration";
+}
+
+
+@*<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</div>*@
+<div class="simple-login-container">
+    <h2>ĐĂNG KÍ</h2>
+    <form method="post" asp-controller="account" asp-action="register">
+        @Html.ValidationMessage("invalid_account", new { @class = "text-danger mb-10" })
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="text" placeholder="First Name" name="FirstName" class="form-control">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="text" placeholder="Email" name="Email" class="form-control">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="password" placeholder="Password" name="Password" class="form-control">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="password" placeholder="ConfirmPassword" name="ConfirmPassword" class="form-control">
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="submit" class="btn btn-block btn-login" placeholder="Đăng kí">
+
+            </div>
+        </div>
+        <h4 class="text-center text-warning">Đã có tài khoản</h4>
+        <a class="nav-link text-test text-center" asp-area="" asp-controller="Account" asp-action="login">Đăng nhập</a>
+    </form>
+</div>
+<style>
+    body {
+        font-size: 14px;
+    }
+
+    .text-test {
+        color: black !important;
+    }
+
+        .text-test:hover {
+            color: cornflowerblue !important;
+        }
+
+    .simple-login-container {
+        width: 300px;
+        max-width: 100%;
+        margin: 50px auto;
+    }
+
+        .simple-login-container h2 {
+            text-align: center;
+            font-size: 20px;
+            color: darkturquoise;
+        }
+
+        .simple-login-container .btn-login {
+            background-color: #FF5964;
+        }
+</style>

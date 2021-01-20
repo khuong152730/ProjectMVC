@@ -1,0 +1,122 @@
+﻿@model Web.Data.Entities.AppUser
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thông tin</title>
+</head>
+<body>
+    <div class="container details-user">
+        <h3>Chi tiết người dùng</h3>
+        <table>
+            <tr>
+                <td class="title">Last Name</td>
+                <td class="content">@Model.LastName</td>
+            </tr>
+            <tr>
+                <td class="title">First Name</td>
+                <td class="content">@Model.FirstName</td>
+            </tr>
+            <tr>
+                <td class="title">Full Name</td>
+                <td class="content">@Model.FullName</td>
+            </tr>
+            <tr>
+                <td class="title">Date of Birth</td>
+                <td class="content">@Model.DateOfBirth.ToString().Replace("12:00:00 AM +07:00", " ")</td>
+            </tr>
+            <tr>
+                <td class="title">Giới tính</td>
+                <td class="content">
+                    @{
+                        if (@Model.Gender == true)
+                        {
+                            <span>Nam</span>
+                        }
+                        else
+                        {
+                            <span>Nữ</span>
+
+                        }
+                    }
+
+                </td>
+            </tr>
+            <tr>
+                <td class="title">Địa chỉ</td>
+                <td class="content">@Model.Address</td>
+            </tr>
+            <tr>
+                <td class="title">Email</td>
+                <td class="content">@Model.Email</td>
+            </tr>
+            <tr>
+                <td class="title">Phone</td>
+                <td class="content">@Model.PhoneNumber</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-center"> <a asp-action="Update" asp-controller="Account" asp-route-id="@Model.Id" class="text-white btn btn-danger">Cập nhật</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+<style>
+    h3 {
+        font-weight: 400;
+        color: cornflowerblue;
+        border-bottom: 1px solid black;
+        padding: 0.5rem 0;
+    }
+
+    .details-user table {
+        font-size: 1.3rem;
+        width: 40%;
+        /* background: firebrick; */
+        margin: 0 auto;
+    }
+
+        .details-user table tr .title {
+            text-transform: uppercase;
+            color: rgb(0, 86, 112);
+            font-weight: 600;
+        }
+
+        .details-user table tr .content {
+            font-weight: 500;
+        }
+
+        .details-user table tr td {
+            padding: 1rem 0 !important;
+        }
+
+            .details-user table tr td input {
+                outline: none;
+                border: none;
+                border-bottom: 1px dotted black;
+            }
+
+    * {
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .tickk table {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        .tickk table th {
+            background: lightgrey;
+            color: rgb(141, 0, 0);
+        }
+
+        .tickk table td {
+            background: rgb(163, 163, 163);
+            color: white;
+        }
+</style>
